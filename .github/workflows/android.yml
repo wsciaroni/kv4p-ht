@@ -23,4 +23,5 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x ./android-src/KV4PHT/gradlew
     - name: Build with Gradle
-      run: ./android-src/KV4PHT/gradlew build
+      run: ./gradlew build
+      working-directory: android-src/KV4PHT

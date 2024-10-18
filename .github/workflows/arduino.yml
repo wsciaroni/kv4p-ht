@@ -22,6 +22,5 @@ jobs:
           libraries: |
             - name: EspSoftwareSerial
               version: 8.1.0
-            - name: arduino-dra818
-              source-url: https://github.com/fatpat/arduino-dra818.git
+            - source-url: https://github.com/fatpat/arduino-dra818.git
               version: v1.0.1

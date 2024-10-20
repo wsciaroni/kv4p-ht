@@ -2,7 +2,7 @@ name: Compile Sketches
 
 on:
   - push
-  - pull_request
+  # - pull_request
 
 jobs:
   compile-sketches:
@@ -14,13 +14,17 @@ jobs:
 
       # See: https://github.com/arduino/compile-sketches#readme
       - name: Compile sketches
-        uses: arduino/compile-sketches@v1
+        uses: arduino/compile-sketches@v1.1.2
         with:
-          fqbn: esp32:esp32:esp32
+          fqbn: arduino:esp32:esp32
+          platforms: |
+            - source-url: "https://github.com/espressif/arduino-esp32.git"
+              name: "arduino:esp32"
+              version: 2.0.17
           sketch-paths: |
             - microcontroller-src/kv4p_ht_esp32_wroom_32
           libraries: |
             - name: EspSoftwareSerial
               version: 8.1.0
-            - source-url: https://github.com/fatpat/arduino-dra818.git
-              version: v1.0.1
+            - source-url: https://github.com/fatpat/arduino-dra818/archive/refs/tags/v1.0.1.zip
+          verbose: true

@@ -16,7 +16,7 @@ jobs:
       - name: Compile sketches
         uses: arduino/compile-sketches@v1.1.2
         with:
-          fqbn: arduino:esp32:esp32
+          fqbn: esp32:esp32:esp32:EventsCore=0
           platforms: |
             - source-url: "https://github.com/espressif/arduino-esp32.git"
               name: "arduino:esp32"

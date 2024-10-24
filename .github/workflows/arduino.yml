@@ -19,7 +19,7 @@ jobs:
           fqbn: esp32:esp32:esp32:EventsCore=0
           platforms: |
             - source-url: "https://github.com/espressif/arduino-esp32.git"
-              name: "arduino:esp32"
+              name: "esp32:esp32"
               version: 2.0.17
           sketch-paths: |
             - microcontroller-src/kv4p_ht_esp32_wroom_32

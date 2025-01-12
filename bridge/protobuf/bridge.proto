@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+// Define the package name to prevent name collisions
+package ham_radio;
+
+// Define the possible commands
+enum CommandType {
+  SET_SAMPLING_RATE = 0;
+  TUNE_TO = 1;
+  SET_FILTER = 2;
+  START_RX = 3;
+  STOP_RX = 4;
+  START_TX = 5;
+  STOP_TX = 6;
+}
+
+// Define the command message structure
+message Command {
+  CommandType type = 1;
+  string tx_freq = 2;
+  string rx_freq = 3;
+  bool emphasis = 4;
+  bool high_pass = 5;
+  bool low_pass = 6;
+  int32 sampling_rate = 7;
+  string uuid = 8; // Unique identifier for each command
+}
+
+// Define the acknowledgement message structure
+message Acknowledgement {
+  string uuid = 1; // UUID of the acknowledged command
+  bool success = 2; // Whether the command was successful
+  string error_message = 3; // Optional error message if success is false
+}
+
+// Define the audio data message structure
+message AudioData {
+  bytes data = 1; // Raw audio data
+}

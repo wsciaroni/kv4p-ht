@@ -109,7 +109,7 @@ void audioTask(void* pvParameters) {
 
 void setup() {
   // Initialize Serial communication
-  SERIAL_PORT.begin(115200);
+  SERIAL_PORT.begin(230400);
 
   // Initialize ADC and DAC
   adc1_config_width(ADC_WIDTH_BIT_12);
